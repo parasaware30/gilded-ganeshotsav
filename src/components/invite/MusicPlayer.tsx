@@ -7,6 +7,7 @@ const KEY = "ganpati-music-pref";
 export function MusicPlayer({ armed }: { armed: boolean }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(false);
 
   useEffect(() => {
     const audio = new Audio(invitation.music.src);
@@ -42,6 +43,7 @@ export function MusicPlayer({ armed }: { armed: boolean }) {
     try {
       await audio.play();
       setPlaying(true);
+      setMuted(false);
       fade(0.45);
       sessionStorage.setItem(KEY, "on");
     } catch {
@@ -51,6 +53,7 @@ export function MusicPlayer({ armed }: { armed: boolean }) {
 
   const stop = () => {
     setPlaying(false);
+    setMuted(true);
     sessionStorage.setItem(KEY, "off");
     fade(0, () => audioRef.current?.pause());
   };
@@ -72,7 +75,7 @@ export function MusicPlayer({ armed }: { armed: boolean }) {
     >
       {playing ? (
         <Disc3 className="animate-spin-slow h-5 w-5" />
-      ) : sessionStorage?.getItem?.(KEY) === "off" ? (
+      ) : muted ? (
         <VolumeX className="h-5 w-5" />
       ) : (
         <Volume2 className="h-5 w-5" />
