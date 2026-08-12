@@ -26,7 +26,7 @@ export function FloatingNav() {
   return (
     <nav
       aria-label="विभाग"
-      className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2 transition-all duration-500 sm:bottom-7"
+      className="fixed bottom-5 left-1/2 z-50 transition-all duration-500 sm:bottom-7"
       style={{
         opacity: visible ? 1 : 0,
         transform: `translateX(-50%) translateY(${visible ? 0 : 28}px)`,
