@@ -85,7 +85,7 @@ export function Intro({ onDone }: { onDone: () => void }) {
         </p>
         <button
           onClick={finish}
-          className="font-sans mt-10 text-[11px] tracking-[0.4em] text-[var(--gold)]/70 uppercase transition-colors hover:text-[var(--gold)]"
+          className="font-marathi mt-10 text-xs tracking-[0.12em] text-[var(--gold)]/70 uppercase transition-colors hover:text-[var(--gold)]"
         >
           {invitation.intro.tap}
         </button>
