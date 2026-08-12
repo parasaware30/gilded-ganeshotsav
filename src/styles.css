@@ -62,26 +62,46 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 1rem;
+  --background: oklch(0.13 0.03 175);
+  --foreground: oklch(0.95 0.02 85);
+  --card: oklch(0.18 0.045 168);
+  --card-foreground: oklch(0.95 0.02 85);
+  --popover: oklch(0.16 0.04 170);
+  --popover-foreground: oklch(0.95 0.02 85);
+  --primary: oklch(0.8 0.13 85);
+  --primary-foreground: oklch(0.16 0.03 170);
+  --secondary: oklch(0.24 0.06 168);
+  --secondary-foreground: oklch(0.95 0.02 85);
+  --muted: oklch(0.22 0.04 175);
+  --muted-foreground: oklch(0.75 0.035 90);
+  --accent: oklch(0.28 0.07 160);
+  --accent-foreground: oklch(0.92 0.06 88);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.62 0.1 88 / 32%);
+  --input: oklch(0.62 0.1 88 / 32%);
+  --ring: oklch(0.8 0.13 85);
+
+  /* Brand tokens */
+  --gold: oklch(0.83 0.13 86);
+  --gold-soft: oklch(0.92 0.07 92);
+  --gold-deep: oklch(0.66 0.12 72);
+  --emerald: oklch(0.32 0.09 165);
+  --emerald-deep: oklch(0.19 0.06 168);
+  --navy: oklch(0.17 0.05 265);
+  --ink: oklch(0.08 0.015 170);
+  --cream: oklch(0.96 0.02 88);
+
+  --font-display: "Yatra One", "Tiro Devanagari Marathi", serif;
+  --font-marathi: "Tiro Devanagari Marathi", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --gradient-royal: linear-gradient(160deg, var(--emerald-deep), var(--navy) 55%, var(--ink));
+  --gradient-gold: linear-gradient(120deg, var(--gold-deep), var(--gold-soft) 45%, var(--gold-deep));
+  --shadow-cinema: 0 40px 120px -30px color-mix(in oklab, var(--ink) 90%, transparent);
+  --glow-gold: 0 0 60px color-mix(in oklab, var(--gold) 28%, transparent);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +160,111 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@theme inline {
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-deep: var(--gold-deep);
+  --color-emerald: var(--emerald);
+  --color-emerald-deep: var(--emerald-deep);
+  --color-navy: var(--navy);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --font-display: var(--font-display);
+  --font-marathi: var(--font-marathi);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+@utility text-gold-gradient {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-royal {
+  background: var(--gradient-royal);
+}
+
+@utility gold-hairline {
+  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+}
+
+@utility glow-soft {
+  box-shadow: var(--glow-gold);
+}
+
+@utility reveal-init {
+  opacity: 0;
+  transform: translateY(48px) scale(0.96);
+  filter: blur(10px);
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
+}
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--dx, 20px), -120vh, 0);
+    opacity: 0;
+  }
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 9s linear infinite;
+}
+@utility animate-float-y {
+  animation: float-y 7s ease-in-out infinite;
+}
+@utility animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
