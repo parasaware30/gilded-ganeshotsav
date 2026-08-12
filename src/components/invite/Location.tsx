@@ -31,12 +31,14 @@ export function Location() {
           href={location.mapsUrl}
           target="_blank"
           rel="noreferrer"
-          className="font-sans group mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/50 px-7 py-3 text-xs tracking-[0.3em] text-[var(--gold-soft)] uppercase transition-all duration-500 hover:scale-[1.04] hover:border-[var(--gold)] hover:text-[var(--ink)]"
-          style={{ backgroundImage: "none" }}
+          className="font-sans group relative mt-8 inline-flex items-center gap-2 overflow-hidden rounded-full border border-[var(--gold)]/50 px-7 py-3 text-xs tracking-[0.3em] text-[var(--gold-soft)] uppercase transition-all duration-500 hover:scale-[1.04] hover:border-[var(--gold)] hover:text-[var(--ink)]"
         >
-          <span className="absolute" />
-          <Navigation className="h-4 w-4 transition-transform duration-500 group-hover:rotate-45" />
-          Google Maps
+          <span
+            className="absolute inset-0 origin-left scale-x-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100"
+            style={{ background: "var(--gradient-gold)" }}
+          />
+          <Navigation className="relative h-4 w-4 transition-transform duration-500 group-hover:rotate-45" />
+          <span className="relative">Google Maps</span>
         </a>
       </div>
     </section>
