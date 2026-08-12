@@ -26,14 +26,16 @@ export function FloatingNav() {
   return (
     <nav
       aria-label="विभाग"
-      className="fixed bottom-5 left-1/2 z-50 transition-all duration-500 sm:bottom-7"
+      className="pointer-events-none fixed inset-x-0 bottom-5 z-50 flex justify-center transition-all duration-500 sm:bottom-7"
       style={{
         opacity: visible ? 1 : 0,
-        transform: `translateX(-50%) translateY(${visible ? 0 : 28}px)`,
-        pointerEvents: visible ? "auto" : "none",
+        transform: `translateY(${visible ? 0 : 28}px)`,
       }}
     >
-      <ul className="flex items-center gap-1 rounded-full border border-[var(--gold)]/35 bg-[var(--ink)]/70 px-2 py-2 backdrop-blur-md">
+      <ul
+        className="flex items-center gap-1 rounded-full border border-[var(--gold)]/35 bg-[var(--ink)]/70 px-2 py-2 backdrop-blur-md"
+        style={{ pointerEvents: visible ? "auto" : "none" }}
+      >
         {ITEMS.map(({ id, label, Icon }) => (
           <li key={id}>
             <a
