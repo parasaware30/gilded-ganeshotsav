@@ -78,7 +78,7 @@ export function Intro({ onDone }: { onDone: () => void }) {
           />
         </div>
         <p
-          className="font-marathi mt-8 text-lg tracking-[0.35em] text-[var(--gold-soft)] transition-opacity duration-1000 sm:text-2xl"
+          className="font-marathi mt-8 text-lg tracking-[0.12em] text-[var(--gold-soft)] transition-opacity duration-1000 sm:text-2xl"
           style={{ opacity: phase === "dark" ? 0 : 1, transitionDelay: "1400ms" }}
         >
           {invitation.intro.mantra}

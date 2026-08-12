@@ -51,7 +51,7 @@ export function Invitation() {
                 <span className="grid h-9 w-9 place-items-center rounded-full border border-[var(--gold)]/40 text-[var(--gold)]">
                   <Icon className="h-4 w-4" />
                 </span>
-                <span className="font-marathi text-xs tracking-[0.28em] text-[var(--gold)]/80">
+                <span className="font-marathi text-xs tracking-[0.12em] text-[var(--gold)]/80">
                   {label}
                 </span>
               </div>

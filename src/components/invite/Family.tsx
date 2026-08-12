@@ -61,7 +61,7 @@ export function Family() {
         </div>
 
         <p
-          className="font-marathi mt-9 text-xs tracking-[0.42em] text-[var(--gold)]/80"
+          className="font-marathi mt-9 text-xs tracking-[0.12em] text-[var(--gold)]/80"
           style={{
             opacity: shown ? 1 : 0,
             transition: "opacity 1000ms ease 900ms",

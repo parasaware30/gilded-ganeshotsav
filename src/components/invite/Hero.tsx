@@ -77,7 +77,7 @@ export function Hero() {
           <CornerFiligree className="absolute bottom-4 left-4 -rotate-90 text-[var(--gold)]/60" />
           <CornerFiligree className="absolute right-4 bottom-4 rotate-180 text-[var(--gold)]/60" />
 
-          <p className="font-marathi text-[0.7rem] tracking-[0.42em] text-[var(--gold)]/80 sm:text-xs">
+          <p className="font-marathi text-[0.7rem] tracking-[0.12em] text-[var(--gold)]/80 sm:text-xs">
             {hero.subline}
           </p>
 
@@ -104,7 +104,7 @@ export function Hero() {
             />
           </div>
 
-          <p className="font-marathi mt-8 text-lg tracking-[0.2em] text-[var(--cream)] sm:text-2xl">
+          <p className="font-marathi mt-8 text-lg tracking-[0.12em] text-[var(--cream)] sm:text-2xl">
             {hero.mantra}
           </p>
           <p className="font-marathi mt-3 text-sm text-[var(--gold-soft)]/85">

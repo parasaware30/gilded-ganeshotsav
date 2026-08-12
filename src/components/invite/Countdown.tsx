@@ -32,7 +32,7 @@ export function Countdown() {
   return (
     <section className="relative px-4 py-20">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="font-marathi text-xs tracking-[0.42em] text-[var(--gold)]/80">
+        <p className="font-marathi text-xs tracking-[0.12em] text-[var(--gold)]/80">
           बाप्पांच्या आगमनासाठी
         </p>
         <div className="mt-8 grid grid-cols-4 gap-2 sm:gap-5">
@@ -45,7 +45,7 @@ export function Countdown() {
               <p className="text-gold-gradient font-serif text-3xl tabular-nums sm:text-5xl">
                 {String(mounted ? t[u.key] : 0).padStart(2, "0")}
               </p>
-              <p className="font-marathi mt-2 text-[10px] tracking-[0.25em] text-[var(--cream)]/60 sm:text-xs">
+              <p className="font-marathi mt-2 text-[10px] tracking-[0.12em] text-[var(--cream)]/60 sm:text-xs">
                 {u.label}
               </p>
             </div>

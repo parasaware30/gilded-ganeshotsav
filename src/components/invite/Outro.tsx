@@ -49,7 +49,7 @@ export function Outro() {
       >
         {invitation.outro.title}
       </h2>
-      <p className="font-marathi relative mt-4 text-sm tracking-[0.35em] text-[var(--cream)]/70">
+      <p className="font-marathi relative mt-4 text-sm tracking-[0.12em] text-[var(--cream)]/70">
         {invitation.outro.subtitle}
       </p>
       <p className="font-sans relative mt-10 text-[11px] tracking-[0.4em] text-[var(--gold)]/55 uppercase">
