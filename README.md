@@ -1,3 +1,5 @@
+invitation Link :-  https://cozy-swan-67c8dd.netlify.app
+
 # Gilded Ganeshotsav
 
 Create a premium, cinematic, highly interactive Ganpati Invitation Website inspired by a luxury digital wedding/invitation experience.
